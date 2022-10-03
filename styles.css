@@ -1,0 +1,26 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.boardGrid {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.character {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.rock {
+  font-size: 35px;
+  font-weight: 800;
+}
