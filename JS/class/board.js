@@ -1,9 +1,10 @@
 class Board {
-  constructor(rows, cols, divBoard) {
+  constructor(rows, cols, rocksQty, divBoard) {
     this.rows = rows;
     this.cols = cols;
     this.divBoard = divBoard;
-    this.rocksQty = 25;
+    this.rocksQty = rocksQty;
+    this.win = false;
     this.createBoard();
     this.createRock();
   }
@@ -32,15 +33,27 @@ class Board {
     this.rock.innerHTML = "🗿";
     for (let i = 0; i < this.rocksQty; i++) {
       let randomCell = Math.floor(Math.random() * (this.rows * this.cols)) + 1;
-      let cell = document.getElementById(`cell${randomCell}`);
+      let cell = document.getElementById(`cell${randomCell}`); // Change
 
-      if(cell.firstChild === null){
+      if (cell.firstChild === null) {
         cell.appendChild(this.rock.cloneNode(true));
       } else {
         i--;
       }
     }
   }
+
+  checkWin() {
+    let bugs = document.querySelectorAll(".npc");
+    if (bugs.length === 0 && this.win === false) {
+      // delay de 500ms
+      setTimeout(() => {
+        alert("You win!");
+        location.reload();
+      }, 500);
+      this.win = true;
+    }
+  }
 }
 
-export default Board;
+// export default Board;

@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>JS Intermediário</h1>
+    <div class="info">
+      <h1>JS Intermediário</h1>
+      <div class="scoreDiv">
+        <span class="label">Score:</span><p class="score">0</p>
+      </div>
+    </div>
 
     <!-- Início do Tabuleiro -->
 
-    <div class="boardGrid">
-    </div>
+    <div class="boardGrid"></div>
 
-    <script type="module" src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/JS/class/characters.js"></script>
+    <script src="/JS/class/board.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
